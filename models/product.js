@@ -18,7 +18,9 @@ module.exports = class Product {
     );
   }
 
-  static deleteById(id) {}
+  static deleteById(id) {
+    return db.execute('DELETE FROM new_table WHERE new_table.id = ?',[id]);
+  }
 
   static fetchAll() {
     return db.execute('SELECT * FROM new_table');
